@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col">
+                <h1>Curso Modulo</h1>
+            </div>
+            <div class="col">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#modalCrear">
+                    Crear
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="row justify-content-center align-items-center g-2">
+            <div id="mensajes">
+              
+            </div>
+            <div class="col">
+
+                <div class="table-responsive">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">nombre</th>
+                                <th scope="col">descripcion</th>
+                                <th scope="col">tiempo</th>
+                                <th scope="col">usuario</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datostabla">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+                <!-- Modal Crear-->
+                <div class="modal fade" id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitleId">
+                                    Modal Crear
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form id="formualCrear">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">nombre</label>
+                                            <input required type="text" class="form-control" name="nombre" id="nombre"
+                                                aria-describedby="helpId" placeholder="nombre" />
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">descripcion</label>
+                                            <input required type="text" class="form-control" name="descripcion" id="descripcion"
+                                                aria-describedby="helpId" placeholder="descripcion" />
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">tiempo</label>
+                                            <input required type="text" class="form-control" name="tiempo" id="tiempo"
+                                                aria-describedby="helpId" placeholder="tiempo" />
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <button
+                                                type="reset"
+                                                class="btn btn-danger"
+                                            >
+                                                Limpiar
+                                            </button>
+                                            
+
+                                            <button
+                                                type="submit"
+                                                class="btn btn-primary"
+                                            >
+                                                Crear
+                                            </button>
+                                            
+                                        </div>
+
+
+
+
+
+
+                                    </form>
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+    <!-- Modal editar -->
+
+    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">
+                    Modal Editar
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form id="formualEditar">
+                        <div class="mb-3">
+                            <label for="" class="form-label">id</label>
+                            <input
+                                disabled
+                                type="text"
+                                class="form-control"
+                                name="ideditar"
+                                id="ideditar"
+                                aria-describedby="helpId"
+                                placeholder=""
+                            />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+                        
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">nombre</label>
+                            <input required type="text" class="form-control" name="nombreeditar" id="nombreeditar"
+                                aria-describedby="helpId" placeholder="nombre" />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">descripcion</label>
+                            <input required type="text" class="form-control" name="descripcioneditar" id="descripcioneditar"
+                                aria-describedby="helpId" placeholder="descripcion" />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">tiempo</label>
+                            <input required type="text" class="form-control" name="tiempoeditar" id="tiempoeditar"
+                                aria-describedby="helpId" placeholder="tiempo" />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">usuario</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="usuarioeditar"
+                                id="usuarioeditar"
+                                aria-describedby="helpId"
+                                placeholder=""
+                            />
+                            <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+                        
+
+                        <div class="mb-3">
+                            <button
+                                type="reset"
+                                class="btn btn-danger"
+                            >
+                                Limpiar
+                            </button>
+                            
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Editar
+                            </button>
+                            
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Modal eliminar -->
+
+  <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">
+                  Modal Eliminar
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <form id="formualEliminar">
+                      <div class="mb-3">
+                          <label for="" class="form-label">id</label>
+                          <input
+                              disabled
+                              type="text"
+                              class="form-control"
+                              name="ideliminar"
+                              id="ideliminar"
+                              aria-describedby="helpId"
+                              placeholder=""
+                          />
+                          <small id="helpId" class="form-text text-muted">Help text</small>
+                      </div>
+
+
+                      <div class="mb-3">
+ 
+                          <button
+                              type="submit"
+                              class="btn btn-danger"
+                          >
+                              Eliminar
+                          </button>
+                          
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  Close
+              </button>
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+    <script type="module" src="js/funcCurso.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+</body>
+</html>
